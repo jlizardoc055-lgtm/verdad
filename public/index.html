@@ -1,333 +1,471 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Urban Style | Tienda de Ropa</title>
+    <title>AutoFix | Mecánica Automotriz</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        /* ENCABEZADO */
+        header {
+            background: #0a0a0a;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #e63900;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff4d00;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff4d00;
+        }
+
+        /* INICIO */
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            background:
+                linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+                linear-gradient(135deg, #222, #111);
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ff4d00;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 15px 25px;
+            background: #ff4d00;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .boton:hover {
+            background: #cc3d00;
+        }
+
+        /* SERVICIOS */
+        .servicios {
+            padding: 70px 8%;
+            background: #181818;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .titulo span {
+            color: #ff4d00;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #242424;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .card .icono {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #ff4d00;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* NOSOTROS */
+        .nosotros {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .nosotros p {
+            max-width: 800px;
+            margin: auto;
+            color: #ccc;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* CONTACTO */
+        .contacto {
+            padding: 70px 8%;
+            background: #181818;
+        }
+
+        .contacto-contenido {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .info h3 {
+            color: #ff4d00;
+            margin-bottom: 15px;
+        }
+
+        .info p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background: #292929;
+            color: white;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background: #ff4d00;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #cc3d00;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #080808;
+            text-align: center;
+            padding: 25px;
+            color: #888;
+        }
+
+        /* CELULAR */
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav a {
+                margin: 8px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .contacto-contenido {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container navbar">
+    <!-- ENCABEZADO -->
+    <header>
 
-            <a href="#" class="logo">
-                URBAN<span>STYLE</span>
-            </a>
-
-            <nav class="nav">
-                <a href="#inicio">Inicio</a>
-                <a href="#coleccion">Colección</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-
-            <div class="header-actions">
-                <button class="search-btn" aria-label="Buscar">
-                    🔍
-                </button>
-
-                <button class="cart-btn" aria-label="Carrito">
-                    🛒 <span class="cart-count">0</span>
-                </button>
-            </div>
-
+        <div class="logo">
+            🔧 AutoFix
         </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
     </header>
 
 
-    <!-- HERO -->
-    <main>
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
 
-        <section id="inicio" class="hero">
+        <div class="hero-content">
 
-            <div class="hero-content">
+            <h1>
+                Mecánica <span>Automotriz</span>
+            </h1>
 
-                <p class="hero-subtitle">
-                    NUEVA COLECCIÓN 2026
-                </p>
-
-                <h1>
-                    Viste tu<br>
-                    <span>propio estilo.</span>
-                </h1>
-
-                <p class="hero-description">
-                    Descubre nuestra nueva colección de prendas
-                    modernas, cómodas y diseñadas para destacar.
-                </p>
-
-                <a href="#coleccion" class="btn">
-                    Ver colección
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- CATEGORÍAS -->
-        <section class="categories">
-
-            <div class="container">
-
-                <div class="section-header">
-                    <p>EXPLORA</p>
-                    <h2>Encuentra tu estilo</h2>
-                </div>
-
-                <div class="category-grid">
-
-                    <a href="#" class="category-card">
-                        <div class="category-image women">
-                            <span>Mujer</span>
-                        </div>
-                    </a>
-
-                    <a href="#" class="category-card">
-                        <div class="category-image men">
-                            <span>Hombre</span>
-                        </div>
-                    </a>
-
-                    <a href="#" class="category-card">
-                        <div class="category-image accessories">
-                            <span>Accesorios</span>
-                        </div>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PRODUCTOS -->
-        <section id="coleccion" class="products">
-
-            <div class="container">
-
-                <div class="section-header products-header">
-                    <div>
-                        <p>LO MÁS NUEVO</p>
-                        <h2>Nueva colección</h2>
-                    </div>
-
-                    <a href="#" class="view-all">
-                        Ver todos →
-                    </a>
-                </div>
-
-
-                <div class="product-grid">
-
-                    <article class="product-card">
-
-                        <div class="product-image">
-                            <span class="product-tag">
-                                NUEVO
-                            </span>
-                        </div>
-
-                        <div class="product-info">
-                            <h3>Camisa Oversize</h3>
-                            <p>Camisas</p>
-                            <strong>S/ 89.90</strong>
-                        </div>
-
-                        <button class="add-cart">
-                            Añadir al carrito
-                        </button>
-
-                    </article>
-
-
-                    <article class="product-card">
-
-                        <div class="product-image">
-                            <span class="product-tag">
-                                NUEVO
-                            </span>
-                        </div>
-
-                        <div class="product-info">
-                            <h3>Pantalón Cargo</h3>
-                            <p>Pantalones</p>
-                            <strong>S/ 129.90</strong>
-                        </div>
-
-                        <button class="add-cart">
-                            Añadir al carrito
-                        </button>
-
-                    </article>
-
-
-                    <article class="product-card">
-
-                        <div class="product-image">
-                        </div>
-
-                        <div class="product-info">
-                            <h3>Casaca Denim</h3>
-                            <p>Casacas</p>
-                            <strong>S/ 159.90</strong>
-                        </div>
-
-                        <button class="add-cart">
-                            Añadir al carrito
-                        </button>
-
-                    </article>
-
-
-                    <article class="product-card">
-
-                        <div class="product-image">
-                        </div>
-
-                        <div class="product-info">
-                            <h3>Polera Essential</h3>
-                            <p>Poleras</p>
-                            <strong>S/ 99.90</strong>
-                        </div>
-
-                        <button class="add-cart">
-                            Añadir al carrito
-                        </button>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- BANNER -->
-        <section class="promo">
-
-            <div class="promo-content">
-
-                <p>OFERTA ESPECIAL</p>
-
-                <h2>
-                    20% OFF
-                </h2>
-
-                <p>
-                    En tu primera compra.
-                </p>
-
-                <a href="#coleccion" class="btn btn-light">
-                    Comprar ahora
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- NOSOTROS -->
-        <section id="nosotros" class="about">
-
-            <div class="container about-content">
-
-                <div>
-                    <p class="section-label">
-                        SOBRE NOSOTROS
-                    </p>
-
-                    <h2>
-                        Moda que habla<br>
-                        por ti.
-                    </h2>
-                </div>
-
-                <div>
-                    <p>
-                        En Urban Style creemos que la ropa es una forma
-                        de expresión. Creamos prendas modernas y versátiles
-                        para que puedas construir tu propio estilo.
-                    </p>
-
-                    <a href="#" class="text-link">
-                        Conoce nuestra historia →
-                    </a>
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer id="contacto" class="footer">
-
-        <div class="container footer-grid">
-
-            <div>
-                <a href="#" class="logo footer-logo">
-                    URBAN<span>STYLE</span>
-                </a>
-
-                <p>
-                    Moda contemporánea para todos los días.
-                </p>
-            </div>
-
-
-            <div>
-                <h4>Tienda</h4>
-
-                <a href="#coleccion">Nueva colección</a>
-                <a href="#">Mujer</a>
-                <a href="#">Hombre</a>
-                <a href="#">Accesorios</a>
-            </div>
-
-
-            <div>
-                <h4>Ayuda</h4>
-
-                <a href="#">Preguntas frecuentes</a>
-                <a href="#">Envíos</a>
-                <a href="#">Cambios y devoluciones</a>
-                <a href="#">Contacto</a>
-            </div>
-
-
-            <div>
-                <h4>Síguenos</h4>
-
-                <div class="social">
-                    <a href="#">Instagram</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">TikTok</a>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="container footer-bottom">
             <p>
-                © 2026 Urban Style. Todos los derechos reservados.
+                Servicio profesional para mantener tu vehículo
+                seguro, potente y en perfectas condiciones.
             </p>
+
+            <a href="#contacto" class="boton">
+                📅 Solicitar cita
+            </a>
+
         </div>
+
+    </section>
+
+
+    <!-- SERVICIOS -->
+    <section class="servicios" id="servicios">
+
+        <h2 class="titulo">
+            Nuestros <span>Servicios</span>
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icono">🔧</div>
+
+                <h3>
+                    Mantenimiento
+                </h3>
+
+                <p>
+                    Cambio de aceite, filtros, revisión
+                    general y mantenimiento preventivo.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icono">🚗</div>
+
+                <h3>
+                    Diagnóstico
+                </h3>
+
+                <p>
+                    Detectamos fallas del vehículo utilizando
+                    herramientas de diagnóstico.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icono">⚙️</div>
+
+                <h3>
+                    Reparaciones
+                </h3>
+
+                <p>
+                    Reparación de motor, frenos, suspensión,
+                    dirección y sistema eléctrico.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icono">🛞</div>
+
+                <h3>
+                    Frenos
+                </h3>
+
+                <p>
+                    Revisión y cambio de pastillas,
+                    discos y componentes del sistema.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icono">🔋</div>
+
+                <h3>
+                    Sistema Eléctrico
+                </h3>
+
+                <p>
+                    Diagnóstico de batería, alternador,
+                    luces y sistema eléctrico.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icono">❄️</div>
+
+                <h3>
+                    Aire Acondicionado
+                </h3>
+
+                <p>
+                    Revisión, mantenimiento y reparación
+                    del sistema de aire acondicionado.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOSOTROS -->
+    <section class="nosotros" id="nosotros">
+
+        <h2 class="titulo">
+            Sobre <span>Nosotros</span>
+        </h2>
+
+        <p>
+            En AutoFix nos dedicamos al mantenimiento y reparación
+            de vehículos. Nuestro objetivo es ofrecer un servicio
+            confiable, rápido y profesional para que puedas conducir
+            con tranquilidad.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+
+        <h2 class="titulo">
+            <span>Contáctanos</span>
+        </h2>
+
+        <div class="contacto-contenido">
+
+            <div class="info">
+
+                <h3>📍 Dirección</h3>
+                <p>Av. Principal 123, Lima</p>
+
+                <h3>📞 Teléfono</h3>
+                <p>+51 999 999 999</p>
+
+                <h3>🕐 Horario</h3>
+                <p>Lunes - Sábado: 8:00 AM - 6:00 PM</p>
+
+                <h3>✉️ Correo</h3>
+                <p>contacto@autofix.com</p>
+
+            </div>
+
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Nombre"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    placeholder="Teléfono"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Correo electrónico"
+                    required
+                >
+
+                <textarea
+                    placeholder="¿Qué servicio necesitas?"
+                ></textarea>
+
+                <button type="submit">
+                    Enviar solicitud
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <p>
+            © 2026 AutoFix - Mecánica Automotriz
+        </p>
 
     </footer>
 
-
-    <script src="script.js"></script>
-
 </body>
+
 </html>
